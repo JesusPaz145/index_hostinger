@@ -31,6 +31,6 @@ if ($db) {
 
     echo json_encode($apps);
 } else {
-    echo json_encode(array("message" => "Error de conexión a la base de datos"));
+    echo json_encode(array("message" => "Error de conexión a la base de datos."));
 }
 ?>
