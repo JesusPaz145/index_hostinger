@@ -3,21 +3,25 @@ import React, { useState } from 'react';
 const AdminPanel = ({ estudios, skills, experiencias, apps, onSave, onClose }) => {
   const [activeTab, setActiveTab] = useState('estudios');
   const [data, setData] = useState({
-    estudios,
-    skills,
-    experiencias,
-    apps
+    estudios: [...estudios],
+    skills: [...skills],
+    experiencias: [...experiencias],
+    apps: [...apps]
   });
   const [editingItem, setEditingItem] = useState(null);
   const [isAdding, setIsAdding] = useState(false);
 
+  // Sincronizar con props cuando cambien
+  React.useEffect(() => {
+    setData({
+      estudios: [...estudios],
+      skills: [...skills],
+      experiencias: [...experiencias],
+      apps: [...apps]
+    });
+  }, [estudios, skills, experiencias, apps]);
+
   const handleSave = () => {
-    // Guardar en localStorage
-    localStorage.setItem('portfolio_estudios', JSON.stringify(data.estudios));
-    localStorage.setItem('portfolio_skills', JSON.stringify(data.skills));
-    localStorage.setItem('portfolio_experiencias', JSON.stringify(data.experiencias));
-    localStorage.setItem('portfolio_apps', JSON.stringify(data.apps));
-    
     onSave(data);
     alert('Datos guardados correctamente!');
   };

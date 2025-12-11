@@ -4,7 +4,7 @@
     "nombre": "E-Commerce Platform",
     "descripcion": "Plataforma completa de comercio electrónico con carrito de compras, pasarela de pagos y panel de administración.",
     "tecnologias": ["React", "Node.js", "MongoDB", "Stripe"],
-    "imagen": "https://via.placeholder.com/400x300/E63946/FFFFFF?text=E-Commerce",
+    "imagen": "https://placehold.co/400x300/58a6ff/FFFFFF?text=E-Commerce",
     "github": "https://github.com/tuusuario/ecommerce",
     "demo": "https://demo-ecommerce.com",
     "destacado": true
@@ -14,7 +14,7 @@
     "nombre": "Task Manager Pro",
     "descripcion": "Aplicación de gestión de tareas y proyectos con tableros Kanban, calendarios y colaboración en tiempo real.",
     "tecnologias": ["React", "Firebase", "Tailwind CSS"],
-    "imagen": "https://via.placeholder.com/400x300/E63946/FFFFFF?text=Task+Manager",
+    "imagen": "https://placehold.co/400x300/58a6ff/FFFFFF?text=Task+Manager",
     "github": "https://github.com/tuusuario/task-manager",
     "demo": "https://taskmanager-demo.com",
     "destacado": true
@@ -24,7 +24,7 @@
     "nombre": "Weather Dashboard",
     "descripcion": "Dashboard del clima con pronósticos extendidos, mapas interactivos y alertas meteorológicas.",
     "tecnologias": ["React", "OpenWeather API", "Chart.js"],
-    "imagen": "https://via.placeholder.com/400x300/E63946/FFFFFF?text=Weather+App",
+    "imagen": "https://placehold.co/400x300/58a6ff/FFFFFF?text=Weather+App",
     "github": "https://github.com/tuusuario/weather-dashboard",
     "demo": "https://weather-demo.com",
     "destacado": false
@@ -34,7 +34,7 @@
     "nombre": "Portfolio CMS",
     "descripcion": "Sistema de gestión de contenidos para portfolios personales con editor visual y plantillas personalizables.",
     "tecnologias": ["React", "Next.js", "PostgreSQL", "Prisma"],
-    "imagen": "https://via.placeholder.com/400x300/E63946/FFFFFF?text=Portfolio+CMS",
+    "imagen": "https://placehold.co/400x300/58a6ff/FFFFFF?text=Portfolio+CMS",
     "github": "https://github.com/tuusuario/portfolio-cms",
     "demo": "https://portfolio-cms-demo.com",
     "destacado": false
@@ -44,7 +44,7 @@
     "nombre": "Fitness Tracker",
     "descripcion": "Aplicación de seguimiento de ejercicios y nutrición con estadísticas y gráficos de progreso.",
     "tecnologias": ["React Native", "Node.js", "MySQL"],
-    "imagen": "https://via.placeholder.com/400x300/E63946/FFFFFF?text=Fitness+Tracker",
+    "imagen": "https://placehold.co/400x300/58a6ff/FFFFFF?text=Fitness+Tracker",
     "github": "https://github.com/tuusuario/fitness-tracker",
     "demo": null,
     "destacado": false

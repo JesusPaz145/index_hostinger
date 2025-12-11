@@ -64,6 +64,13 @@ function App() {
     const savedExperiencias = localStorage.getItem('portfolio_experiencias');
     const savedApps = localStorage.getItem('portfolio_apps');
 
+    console.log('Cargando desde localStorage:', {
+      estudios: savedEstudios ? JSON.parse(savedEstudios) : estudiosData,
+      skills: savedSkills ? JSON.parse(savedSkills) : skillsData,
+      experiencias: savedExperiencias ? JSON.parse(savedExperiencias) : experienciasData,
+      apps: savedApps ? JSON.parse(savedApps) : appsData
+    });
+
     setEstudios(savedEstudios ? JSON.parse(savedEstudios) : estudiosData);
     setSkills(savedSkills ? JSON.parse(savedSkills) : skillsData);
     setExperiencias(savedExperiencias ? JSON.parse(savedExperiencias) : experienciasData);
@@ -71,10 +78,22 @@ function App() {
   };
 
   const handleSaveData = (newData) => {
-    setEstudios(newData.estudios);
-    setSkills(newData.skills);
-    setExperiencias(newData.experiencias);
-    setApps(newData.apps);
+    console.log('Guardando datos:', newData);
+    
+    // Guardar en localStorage
+    localStorage.setItem('portfolio_estudios', JSON.stringify(newData.estudios));
+    localStorage.setItem('portfolio_skills', JSON.stringify(newData.skills));
+    localStorage.setItem('portfolio_experiencias', JSON.stringify(newData.experiencias));
+    localStorage.setItem('portfolio_apps', JSON.stringify(newData.apps));
+    
+    // Actualizar estados inmediatamente
+    setEstudios([...newData.estudios]);
+    setSkills([...newData.skills]);
+    setExperiencias([...newData.experiencias]);
+    setApps([...newData.apps]);
+    
+    // Cerrar panel admin
+    setShowAdmin(false);
   };
 
   if (loading) {
@@ -153,7 +172,7 @@ function App() {
                 Educación
               </h2>
               <div className="space-y-3">
-                {estudiosData.map((estudio) => (
+                {estudios.map((estudio) => (
                   <EstudioCard key={estudio.id} estudio={estudio} />
                 ))}
               </div>
@@ -166,7 +185,7 @@ function App() {
                 Skills
               </h2>
               <div className="bg-gh-gray border border-gh-border rounded-lg p-4">
-                {skillsData.map((skill) => (
+                {skills.map((skill) => (
                   <SkillBar key={skill.id} skill={skill} />
                 ))}
               </div>
@@ -181,7 +200,7 @@ function App() {
                 Experiencia Laboral
               </h2>
               <div className="space-y-3">
-                {experienciasData.map((experiencia) => (
+                {experiencias.map((experiencia) => (
                   <ExperienciaCard key={experiencia.id} experiencia={experiencia} />
                 ))}
               </div>
@@ -196,7 +215,7 @@ function App() {
                 Mis Proyectos
               </h2>
               <div className="space-y-4">
-                {appsData.map((app) => (
+                {apps.map((app) => (
                   <AppCard key={app.id} app={app} />
                 ))}
               </div>
