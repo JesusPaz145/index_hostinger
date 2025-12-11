@@ -1,6 +1,7 @@
-# Portfolio Personal - JP
+# Portafolio (estático) - convertido a HTML/CSS/JS + PHP
 
-Portfolio personal desarrollado con React, Vite y Tailwind CSS con diseño en negro y rojo.
+He convertido este repositorio a una versión simple basada en HTML, CSS y JavaScript en el frontend
+con endpoints PHP del lado del servidor que sirven los datos JSON existentes en `data/`.
 
 ## 🚀 Características
 
@@ -11,30 +12,16 @@ Portfolio personal desarrollado con React, Vite y Tailwind CSS con diseño en ne
 - ✅ Animaciones y efectos hover
 - ✅ Listo para desplegar en Hostinger
 
-## 📦 Instalación
+## Cómo ejecutar (con PHP)
 
-1. Instala las dependencias:
-```bash
-npm install
+Puedes ejecutar esta versión con el servidor PHP embebido (requiere PHP instalado):
+
+```powershell
+cd c:\www\GitHub\guarderia_py\TransitPro\index_hostinger
+php -S localhost:8000 -t .
 ```
 
-## 🛠️ Desarrollo
-
-Para iniciar el servidor de desarrollo:
-```bash
-npm run dev
-```
-
-La aplicación estará disponible en `http://localhost:5173`
-
-## 🏗️ Build para Producción
-
-Para crear el build optimizado para Hostinger:
-```bash
-npm run build
-```
-
-Los archivos se generarán en la carpeta `dist/`
+Después abre `http://localhost:8000` en tu navegador. Los endpoints están en `./api/*.php` y leen los JSON en `./data/`.
 
 ## 📤 Despliegue en Hostinger
 
@@ -51,47 +38,25 @@ Los archivos se generarán en la carpeta `dist/`
 - Conecta vía FTP a tu hosting
 - Sube los archivos de `dist/` a `public_html/`
 
-## 📁 Estructura del Proyecto
+## Estructura minimizada
 
-```
-src/
-├── components/          # Componentes React
-│   ├── EstudioCard.jsx
-│   ├── SkillBar.jsx
-│   ├── ExperienciaCard.jsx
-│   └── AppCard.jsx
-├── data/               # Archivos JSON (base de datos)
-│   ├── estudios.json
-│   ├── skills.json
-│   ├── experiencias.json
-│   └── apps.json
-├── App.jsx            # Componente principal
-├── main.jsx           # Punto de entrada
-└── index.css          # Estilos globales
-```
+- `index.html` — página principal (frontend estático)
+- `assets/` — `style.css` y `script.js`
+- `api/` — endpoints PHP: `apps.php`, `estudios.php`, `experiencias.php`, `skills.php`, `contact.php`
+- `data/` — archivos JSON con tus datos (se consumen desde `api/`)
 
-## 🎨 Personalización
+Los archivos React/Tailwind/Vite se han dejado sólo como referencia en `src/` pero ya no son necesarios.
 
-### Datos
-Edita los archivos JSON en `src/data/` para actualizar tu información:
-- `estudios.json` - Tu educación
-- `skills.json` - Tus habilidades técnicas
-- `experiencias.json` - Tu experiencia laboral
-- `apps.json` - Tus proyectos
+## Personalización rápida
 
-### Colores
-Los colores están definidos en `tailwind.config.js`:
-- `jp-red`: #E63946 (Rojo principal)
-- `jp-dark`: #0A0A0A (Negro oscuro)
-- `jp-gray`: #1A1A1A (Gris oscuro)
+1. Edita los JSON en `data/` para actualizar tus estudios, habilidades, experiencias y proyectos.
+2. Edita `index.html`, `assets/style.css` o `assets/script.js` para cambiar diseño o comportamiento.
 
-## 📝 Tecnologías
+Contacto: el formulario envía a `api/contact.php` y guarda mensajes en `api/messages.txt`.
 
-- React 18
-- Vite 5
-- Tailwind CSS 3
-- PostCSS + Autoprefixer
+---
+Si quieres, puedo:
+- eliminar completamente los archivos de React/Node (package.json, src/, configs)
+- mejorar el diseño de `index.html` o añadir más secciones
 
-## 📄 Licencia
-
-Proyecto personal - Libre de usar y modificar
+Dime si quieres que borre los archivos antiguos o que haga más ajustes.

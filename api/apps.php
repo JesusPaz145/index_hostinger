@@ -8,28 +8,14 @@ $database = new Database();
 $db = $database->getConnection();
 
 if ($db) {
-    $query = "SELECT a.*, GROUP_CONCAT(at.tecnologia) as tecnologias 
-              FROM apps a
-              LEFT JOIN app_tecnologias at ON a.id = at.app_id
-              GROUP BY a.id
-              ORDER BY a.destacado DESC, a.fecha_creacion DESC";
-    $stmt = $db->prepare($query);
-    $stmt->execute();
-
-    $apps = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    // Convertir tecnologias a array
-    foreach ($apps as &$app) {
-        if ($app['tecnologias']) {
-            $app['tecnologias'] = explode(',', $app['tecnologias']);
-        } else {
-            $app['tecnologias'] = array();
-        }
-        // Convertir destacado a boolean
-        $app['destacado'] = (bool)$app['destacado'];
-    }
-
-    echo json_encode($apps);
+// apps.php - devuelve el contenido de ../data/apps.json si existe
+header('Content-Type: application/json; charset=utf-8');
+$path = __DIR__ . '/../data/apps.json';
+if(file_exists($path)){
+    echo file_get_contents($path);
+    exit;
+}
+echo json_encode([]);
 } else {
     echo json_encode(array("message" => "Error de conexión a la base de datos."));
 }

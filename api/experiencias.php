@@ -30,7 +30,13 @@ if ($db) {
                          ($exp['actual'] ? 'Presente' : date('Y', strtotime($exp['fecha_fin'])));
     }
 
-    echo json_encode($experiencias);
+    // experiencias.php - devuelve data/experiencias.json
+    $path = __DIR__ . '/../data/experiencias.json';
+    if(file_exists($path)){
+        echo file_get_contents($path);
+        exit;
+    }
+    echo json_encode([]);
 } else {
     echo json_encode(array("message" => "Error de conexión a la base de datos"));
 }

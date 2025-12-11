@@ -1,0 +1,26 @@
+:root{--bg:#0f1724;--card:#0b1220;--muted:#9ca3af;--accent:#06b6d4;--text:#e6eef6}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,Segoe UI,Arial;color:var(--text);background:linear-gradient(180deg,#071226 0%,#071827 100%);-webkit-font-smoothing:antialiased}
+.container{max-width:980px;margin:1.25rem auto;padding:0 1rem}
+.site-header{background:linear-gradient(90deg,rgba(6,182,212,0.06),transparent);padding:1.25rem 0;border-bottom:1px solid rgba(255,255,255,0.03)}
+.site-header h1{margin:0;font-size:1.6rem}
+.lead{color:var(--muted);margin-top:.25rem}
+.card{background:rgba(255,255,255,0.02);padding:1rem;border-radius:8px;margin:1rem 0;border:1px solid rgba(255,255,255,0.02)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.75rem}
+.card h2{margin-top:0}
+.app{padding:.75rem;background:rgba(255,255,255,0.01);border-radius:6px;border:1px solid rgba(255,255,255,0.02)}
+.app h3{margin:.25rem 0}
+.muted{color:var(--muted)}
+.list>div{padding:.5rem 0;border-bottom:1px dashed rgba(255,255,255,0.02)}
+.skills .skill{display:flex;align-items:center;gap:.75rem;margin:.5rem 0}
+.skill .bar{flex:1;height:10px;background:rgba(255,255,255,0.04);border-radius:6px;overflow:hidden}
+.skill .bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#7c3aed);border-radius:6px}
+form label{display:block;margin:.5rem 0}
+input,textarea{width:100%;padding:.5rem;border-radius:6px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)}
+button{background:var(--accent);border:none;color:#042027;padding:.6rem .9rem;border-radius:6px;cursor:pointer}
+.site-footer{color:var(--muted);text-align:center;padding:1rem 0;margin-top:2rem}
+
+@media (max-width:600px){.container{padding:0 0.75rem}}
+
+/* small helper */
+.mutedSmall{color:var(--muted);font-size:0.9rem}
