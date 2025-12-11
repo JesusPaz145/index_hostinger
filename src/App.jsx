@@ -134,7 +134,7 @@ function App() {
                 <h1 className="text-xl font-semibold text-gh-text">
                   Mi <span className="text-gh-accent">Portfolio</span>
                 </h1>
-                <p className="text-gray-500 text-xs">Full Stack Developer</p>
+                <p className="text-gray-500 text-xs">Full Stack Developer..</p>
               </div>
             </div>
             <nav className="hidden md:flex gap-6 items-center">
