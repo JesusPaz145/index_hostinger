@@ -1,66 +1,90 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Portafolio</title>
-    <link rel="stylesheet" href="/assets/style.css">
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="container">
-        <div style="display:flex;align-items:center;gap:1rem">
-          <img src="/logo.png" alt="Logo" style="width:50px;height:50px;border-radius:50%;object-fit:cover">
-          <div>
-            <h1 style="margin:0">Mi <span style="color:var(--accent)">Portafolio</span></h1>
-            <p class="lead" style="margin:0.25rem 0 0 0">Full Stack Developer</p>
-          </div>
-        </div>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portafolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/style.css?v=3">
+</head>
+
+<body>
+  <!-- Header is now inside the Left Column conceptually, but we can keep a minimal global header if desired. 
+       Actually, plan said "Command Center" style. Let's make a very thin top bar for the Logo/Branding. 
+       Or include it in Left Column? 
+       Let's stick to a thin unified header for stability, then the optimized grid. -->
+  <header class="site-header">
+    <div class="header-content">
+      <img src="/logo.png" alt="Logo">
+      <div>
+        <h1>Mi <span>Portafolio</span></h1>
+        <p class="lead">Full Stack Developer</p>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <main class="container">
-      <section id="about" class="card">
-        <h2>Sobre mí</h2>
-        <p id="about-text">Desarrollador / Profesional — reemplaza este texto con tu descripción.</p>
-      </section>
+  <main class="container">
+    <div class="dashboard-grid">
 
-      <section id="apps" class="card">
-        <h2>Proyectos</h2>
-        <div id="apps-list" class="grid"></div>
-      </section>
+      <!-- LEFT COLUMN: Identity & Tools -->
+      <div class="col-identity">
+        <!-- About/Profile -->
+        <section id="about" class="card card-compact">
+          <h2>Sobre mí</h2>
+          <p id="about-text">Desarrollador / Profesional — reemplaza este texto con tu descripción.</p>
+        </section>
 
-      <section id="estudios" class="card">
-        <h2>Estudios</h2>
-        <div id="estudios-list" class="list"></div>
-      </section>
+        <!-- Skills -->
+        <section id="skills" class="card card-compact">
+          <h2>Habilidades</h2>
+          <div id="skills-list" class="skills"></div>
+        </section>
 
-      <section id="experiencias" class="card">
-        <h2>Experiencias</h2>
-        <div id="experiencias-list" class="list"></div>
-      </section>
+        <!-- Contact -->
+        <section id="contact" class="card card-compact">
+          <h2>Contacto</h2>
+          <form id="contact-form">
+            <label>Nombre<input name="name" required></label>
+            <label>Email<input name="email" type="email" required></label>
+            <label>Mensaje<textarea name="message" rows="3" required></textarea></label>
+            <button type="submit">Enviar</button>
+            <p id="contact-result" class="muted"></p>
+          </form>
+        </section>
+      </div>
 
-      <section id="skills" class="card">
-        <h2>Habilidades</h2>
-        <div id="skills-list" class="skills"></div>
-      </section>
+      <!-- CENTER COLUMN: Resume (Timeline) -->
+      <div class="col-resume">
+        <section id="experiencias" class="card">
+          <h2>Experiencias</h2>
+          <div id="experiencias-list" class="list"></div>
+        </section>
 
-      <section id="contact" class="card">
-        <h2>Contacto</h2>
-        <form id="contact-form">
-          <label>Nombre<input name="name" required></label>
-          <label>Email<input name="email" type="email" required></label>
-          <label>Mensaje<textarea name="message" rows="4" required></textarea></label>
-          <button type="submit">Enviar</button>
-          <p id="contact-result" class="muted"></p>
-        </form>
-      </section>
-    </main>
+        <section id="estudios" class="card">
+          <h2>Estudios</h2>
+          <div id="estudios-list" class="list"></div>
+        </section>
+      </div>
 
-    <footer class="site-footer">
-      <div class="container">© <span id="year"></span> — Portafolio</div>
-    </footer>
+      <!-- RIGHT COLUMN: Portfolio -->
+      <div class="col-portfolio">
+        <section id="apps" class="card">
+          <h2>Proyectos</h2>
+          <div id="apps-list" class="grid-apps"></div>
+        </section>
+      </div>
 
-    <script src="/assets/script.js"></script>
-  </body>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container-footer">© <span id="year"></span> — Portafolio</div>
+  </footer>
+
+  <script src="/assets/script.js?v=3"></script>
+</body>
+
 </html>

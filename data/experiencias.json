@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "puesto": "Desarrollador Full Stack",
+        "empresa": "Tech Solutions SA",
+        "periodo": "2023 - Presente",
+        "fecha_inicio": "2023-01-01",
+        "fecha_fin": null,
+        "descripcion": "Desarrollo de aplicaciones web con React y Node.js. Implementación de APIs RESTful y gestión de bases de datos.",
+        "actual": true,
+        "tecnologias": [
+            "React",
+            "Node.js",
+            "MongoDB",
+            "Tailwind CSS"
+        ]
+    },
+    {
+        "id": 2,
+        "puesto": "Desarrollador Frontend",
+        "empresa": "Digital Agency",
+        "periodo": "2022 - 2023",
+        "fecha_inicio": "2022-01-01",
+        "fecha_fin": "2023-01-01",
+        "descripcion": "Creación de interfaces responsivas y optimizadas. Colaboración con equipo de diseño UX/UI.",
+        "actual": false,
+        "tecnologias": [
+            "React",
+            "TypeScript",
+            "CSS3",
+            "Redux"
+        ]
+    },
+    {
+        "id": 3,
+        "puesto": "Desarrollador Junior",
+        "empresa": "StartUp Innovation",
+        "periodo": "2021 - 2022",
+        "fecha_inicio": "2021-01-01",
+        "fecha_fin": "2022-01-01",
+        "descripcion": "Mantenimiento y desarrollo de funcionalidades nuevas. Trabajo con metodologías ágiles.",
+        "actual": false,
+        "tecnologias": [
+            "JavaScript",
+            "HTML5",
+            "CSS3",
+            "Bootstrap"
+        ]
+    }
+]
