@@ -1,12 +1,12 @@
 [
     {
         "id": 1,
-        "puesto": "Desarrollador Full Stack",
-        "empresa": "Tech Solutions SA",
+        "puesto": "IT Solution Specialist",
+        "empresa": "Triumph Foods - USA",
         "periodo": "2023 - Presente",
         "fecha_inicio": "2023-01-01",
         "fecha_fin": null,
-        "descripcion": "Desarrollo de aplicaciones web con React y Node.js. Implementación de APIs RESTful y gestión de bases de datos.",
+        "descripcion": "Desarrollo de aplicaciones con python. Asistencia al usuario.\nManejo de Active Directory.\nManejo de redes con switches cisco.",
         "actual": true,
         "tecnologias": [
             "React",
@@ -17,12 +17,12 @@
     },
     {
         "id": 2,
-        "puesto": "Desarrollador Frontend",
-        "empresa": "Digital Agency",
+        "puesto": "Desarrollador web",
+        "empresa": "Icarosoft - Tecnoven - Venezuela",
         "periodo": "2022 - 2023",
         "fecha_inicio": "2022-01-01",
         "fecha_fin": "2023-01-01",
-        "descripcion": "Creación de interfaces responsivas y optimizadas. Colaboración con equipo de diseño UX/UI.",
+        "descripcion": "Creacion de aplicaciones web con php, html y css. Manejo de base de datos con SQL,",
         "actual": false,
         "tecnologias": [
             "React",
@@ -33,12 +33,12 @@
     },
     {
         "id": 3,
-        "puesto": "Desarrollador Junior",
-        "empresa": "StartUp Innovation",
-        "periodo": "2021 - 2022",
+        "puesto": "IT",
+        "empresa": "OneChannel - Peru",
+        "periodo": "2018 - 2022",
         "fecha_inicio": "2021-01-01",
         "fecha_fin": "2022-01-01",
-        "descripcion": "Mantenimiento y desarrollo de funcionalidades nuevas. Trabajo con metodologías ágiles.",
+        "descripcion": "Desarrollo de aplicaciones con PHP, html y css.\nControl de grandes bases de datos con SQL.\nCreacion de Robots o procedimientos automatizados con WInAutomation.",
         "actual": false,
         "tecnologias": [
             "JavaScript",

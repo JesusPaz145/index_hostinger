@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin - Portafolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/style.css?v=3">
+    <style>
+        body {
+            padding: 2rem;
+            overflow-y: auto;
+            height: auto;
+            display: block;
+        }
+
+        .admin-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 1rem;
+            overflow-x: auto;
+        }
+
+        .tab {
+            background: transparent;
+            border: 1px solid var(--glass-border);
+            color: var(--text-muted);
+            font-size: 1rem;
+            cursor: pointer;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-sm);
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .tab:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .tab.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 0 15px var(--primary-glow);
+        }
+
+        /* Editor */
+        .editor-section {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .editor-section.active {
+            display: block;
+        }
+
+        /* Items */
+        .item-row {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--glass-border);
+            display: flex;
+            gap: 1.5rem;
+            align-items: start;
+            transition: all 0.3s;
+        }
+
+        .item-row:hover {
+            border-color: var(--glass-highlight);
+        }
+
+        .item-form {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            width: -webkit-fill-available;
+        }
+
+        /* Actions */
+        .actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .btn-del {
+            background: rgba(239, 68, 68, 0.1);
+            color: #ef4444;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            padding: 0.75rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-del:hover {
+            background: #ef4444;
+            color: white;
+            box-shadow: 0 0 10px rgba(239, 68, 68, 0.4);
+        }
+
+        .btn-add {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px dashed var(--glass-border);
+            color: var(--text-main);
+            width: 100%;
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin-bottom: 2rem;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .btn-add:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--primary);
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin: 0;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="admin-container">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <a href="/" class="back-link">← Volver al Sitio</a>
+        </div>
+
+        <div
+            style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2.5rem; border-bottom:1px solid var(--glass-border); padding-bottom:1.5rem;">
+            <h1>Panel de Control</h1>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active" onclick="switchTab('estudios')">Estudios</button>
+            <button class="tab" onclick="switchTab('experiencias')">Experiencias</button>
+            <button class="tab" onclick="switchTab('apps')">Proyectos</button>
+            <button class="tab" onclick="switchTab('skills')">Habilidades</button>
+        </div>
+
+        <div id="estudios" class="editor-section active">
+            <div id="estudios-container"></div>
+            <button class="btn-add" onclick="addItem('estudios')">+ Agregar Nuevo Estudio</button>
+        </div>
+
+        <div id="experiencias" class="editor-section">
+            <div id="experiencias-container"></div>
+            <button class="btn-add" onclick="addItem('experiencias')">+ Agregar Nueva Experiencia</button>
+        </div>
+
+        <div id="apps" class="editor-section">
+            <div id="apps-container"></div>
+            <button class="btn-add" onclick="addItem('apps')">+ Agregar Nuevo Proyecto</button>
+        </div>
+
+        <div id="skills" class="editor-section">
+            <div id="skills-container"></div>
+            <button class="btn-add" onclick="addItem('skills')">+ Agregar Nueva Habilidad</button>
+        </div>
+
+        <!-- No Global Save Button -->
+    </div>
+
+    <script src="/assets/admin.js"></script>
+</body>
+
+</html>

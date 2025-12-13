@@ -1,29 +1,20 @@
 [
-  {
-    "id": 1,
-    "titulo": "Ingeniería en Sistemas Computacionales",
-    "institucion": "Universidad Tecnológica",
-    "periodo": "2018 - 2022",
-    "fecha_inicio": "2018-01-01",
-    "fecha_fin": "2022-12-01",
-    "descripcion": "Especialización en desarrollo web y bases de datos"
-  },
-  {
-    "id": 2,
-    "titulo": "Certificación Full Stack Developer",
-    "institucion": "Platzi",
-    "periodo": "2022",
-    "fecha_inicio": "2022-01-01",
-    "fecha_fin": "2022-12-01",
-    "descripcion": "React, Node.js, MongoDB, PostgreSQL"
-  },
-  {
-    "id": 3,
-    "titulo": "Curso Avanzado de React",
-    "institucion": "Udemy",
-    "periodo": "2023",
-    "fecha_inicio": "2023-01-01",
-    "fecha_fin": "2023-06-01",
-    "descripcion": "Hooks, Context API, Redux, Next.js"
-  }
+    {
+        "id": 1,
+        "titulo": "Ingeniería en Sistemas",
+        "institucion": "Universidad Dr. Jose Gregorio Hernandez (Venezuela)",
+        "periodo": "2009 - 2013",
+        "fecha_inicio": "2018-01-01",
+        "fecha_fin": "2022-12-01",
+        "descripcion": "Carrera universitaria de sistemas."
+    },
+    {
+        "id": 2,
+        "titulo": "Diplomado en WebMaster",
+        "institucion": "Universidad Dr. Rafael Belloso Chacin",
+        "periodo": "2014",
+        "fecha_inicio": "2022-01-01",
+        "fecha_fin": "2022-12-01",
+        "descripcion": "HTML, CSS, JavaScript, Ajax"
+    }
 ]
