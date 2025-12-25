@@ -1,0 +1,9 @@
+.git
+.env
+.env.production
+node_modules
+dist
+Dockerfile
+docker-compose.yml
+README.md
+vendor
